@@ -38,8 +38,8 @@ func setFromString(str string) Set {
 
 func (s Set) isSubsetOf(parentSet Set) bool {
 	subSetCheckBool := make([]bool, 0, len(s)) 
-	for sKey, _ := range s {
-		for key, _ := range parentSet {
+	for sKey:= range s {
+		for key := range parentSet {
 			if (sKey == key) {
 				subSetCheckBool = append(subSetCheckBool, true)
 				break
@@ -53,7 +53,7 @@ func (s Set) isSubsetOf(parentSet Set) bool {
 func (s Set) isEqual(anotherSet Set) bool {
 	if len(s) != len(anotherSet) { return false }
 	isEqual := true
-	for sKey, _ := range s {
+	for sKey := range s {
 		hasKey := false
 		for key := range anotherSet {
 			if (sKey == key) {
